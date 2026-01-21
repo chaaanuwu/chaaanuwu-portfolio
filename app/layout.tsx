@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   title: 'Chanuka Senevirathne | Creative Developer',
   description: 'Portfolio of Chanuka Senevirathne – crafting modern, interactive web experiences.',
   keywords: ['Portfolio', 'Web Developer', 'React', 'Next.js', 'Frontend Developer', 'Chanuka Senevirathne'],
-  authors: [{ name: 'Chanuka Senevirathne', url: 'https://yourportfolio.com' }],
+  authors: [{ name: 'Chanuka Senevirathne', url: 'https://chaaanuwu.vercel.app/' }],
   creator: 'Chanuka Senevirathne',
   publisher: 'Chanuka Senevirathne',
-  metadataBase: new URL('https://yourportfolio.com'), // base URL for OG
+  metadataBase: new URL('https://chaaanuwu.vercel.app/'),
   openGraph: {
     title: 'Chanuka Senevirathne | Creative Developer',
     description: 'Portfolio of Chanuka Senevirathne – crafting modern, interactive web experiences.',
-    url: 'https://yourportfolio.com',
+    url: 'https://chaaanuwu.vercel.app/',
     siteName: 'Chanuka Senevirathne Portfolio',
     images: [
       {
@@ -30,10 +30,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Chanuka Senevirathne | Creative Developer',
     description: 'Portfolio of Chanuka Senevirathne – crafting modern, interactive web experiences.',
-    creator: '@your_twitter', // optional
     images: ['/og-image.png'],
   },
-  themeColor: '#0A0F1C', // dark theme color
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
