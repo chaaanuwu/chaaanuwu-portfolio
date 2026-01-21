@@ -15,7 +15,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "n1d28i743g.ufs.sh",
-        pathname: "/**", // allow all paths
+        pathname: "/**",
       },
     ],
   },
