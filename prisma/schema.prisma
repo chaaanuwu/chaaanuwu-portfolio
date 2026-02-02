@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Pages {
+  id           Int     @id @default(autoincrement())
+  title        String
+  slug         String  @unique
+  heading      String
+  subHeading   String?
+  description  String?
+  order        Int
+  createdAt    DateTime @default(now())
+}
+
+model Sources {
+  id           Int     @id @default(autoincrement())
+  title        String
+  srcUrl       String?
+  createdAt    DateTime @default(now())
+}
+
+model Skills {
+  id        Int      @id @default(autoincrement())
+  title     String
+  imgUrl    String
+  type      String?
+  Order     Int
+  createdAt DateTime @default(now())
+
+  projects  ProjectSkills[]
+}
+
+model GoogleAuth {
+  id           Int     @id @default(1)
+  accessToken  String?
+  refreshToken String?
+}
+
+model Certificates {
+  id            Int      @id @default(autoincrement())
+  name          String
+  issuer        String
+  issueDate     DateTime
+  credentialUrl String   @unique
+  imageUrl      String
+  order         Int      @default(autoincrement())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Projects {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  projectUrl  String   @unique
+  imageUrl    String
+  featured    Boolean  @default(false)
+  order       Int      @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  techStack   ProjectSkills[]
+  details     ProjectDetails?
+}
+
+model ProjectDetails {
+  id          Int      @id @default(autoincrement())
+  projectId   Int      @unique
+  intro       String?
+  features    String?
+  GithubUrl   String?
+  liveUrl     String?
+  createdAt   DateTime @default(now())
+
+  project     Projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model ProjectSkills {
+  projectId Int
+  skillId   Int
+
+  project Projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  skill   Skills   @relation(fields: [skillId], references: [id])
+
+  @@id([projectId, skillId])
+}
+
+model Contacts {
+  id            Int      @id @default(autoincrement())
+  platform      String
+  url           String
+  title         String
+  subtitle      String
+  path          String
+  bgColor       String
+  order         Int      @default(autoincrement())
+  createdAt     DateTime @default(now())
+}
+
+model User {
+  id           String    @default(cuid())
+  name         String
+  username     String    @unique
+  password     String
+  createdAt    DateTime  @default(now())
+}

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --color-background: #0A0F1C;   /* Dark main background */
+  --color-sidebar: #121826;      /* Sidebar background */
+  --color-text: #FFFFFF;         /* Primary text */
+  --color-text-muted: #9CA3AF;   /* Muted gray (Tailwind gray-400) */
+  --color-border: #374151;       /* Divider border (Tailwind gray-700) */
+
+  --color-primary: #3B82F6;      /* Blue (used in SVG circle, Tailwind blue-500) */
+  --color-primary-dark: #2563EB; /* Slightly darker blue, Tailwind blue-600 */
+  --color-primary-hover: #4F46E5; /* Indigo hover (Tailwind indigo-600) */
+
+  --color-accent: #6366F1;       /* Indigo-500 (used in highlights/borders) */ 
+}
+
+body {
+  font-family: 'Tilt Neon', sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
