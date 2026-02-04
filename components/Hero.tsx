@@ -111,7 +111,7 @@ export default function Hero({ onEnter, hidden }: HeroProps) {
             style={{ borderColor: '#6366F1', backgroundColor: 'rgba(99,102,241,0.1)' }}
           >
             <Sparkles className="w-4 h-4 text-indigo-400" />
-            <span className="text-sm text-gray-400">Available for work</span>
+            <span className="text-sm text-gray-400">Learning Through Building</span>
           </div>
 
           {/* Heading */}
